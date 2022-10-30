@@ -1,0 +1,11 @@
+.swiper{
+    width: 830px;
+
+}
+@media  (max-width:753px) {
+    .swiper{
+        max-width:  100%;
+        height: auto;
+width: 100%;
+    }
+}
