@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import ImgCart from './../../img/imgCart/image_195509_1_29993.jpg'
 import ListItemBook from '../List/ListItemBook';
+import { Typography } from '@mui/material';
 
 
 
@@ -17,6 +18,14 @@ export default function LabTabs() {
   return (
     <div className="max-w-[1230px] mx-auto bg-white rounded-lg">
       <Box sx={{ width: '100%', typography: 'body1' }}>
+        <Typography
+        variant='h5'
+        sx={{
+          paddingTop:"12px",
+          paddingLeft:"20px",
+          paddingBottom:"5px",
+        }}
+        >VĂN HỌC</Typography>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <TabList
@@ -50,11 +59,11 @@ export default function LabTabs() {
               }
               onChange={handleChange} aria-label="lab API tabs example">
               <Tab
-                label="Item One" value="1" />
+                label="Văn học mới" value="1" />
               <Tab
-                label="Item Two" value="2" />
+                label="Tiểu thuyết" value="2" />
               <Tab
-                label="Item Three" value="3" />
+                label="Truyện Ngắn" value="3" />
             </TabList>
           </Box>
           <TabPanel value="1">
