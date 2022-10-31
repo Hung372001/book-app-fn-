@@ -20,7 +20,7 @@ const Slider = () => {
   return (
     <div className='max-w-[1230px] mx-auto '>
        <div className="flex xl:flex-row lg:flex-col ">
-        <div className='relative'>
+        <div className='relative' id="banner">
 
       
        <Swiper
