@@ -1,28 +1,44 @@
-import React from 'react'
+import React from "react";
 
-import ItemBook from '../Cart/ItemBook';
-import bookItem from './../../data/BookItem';
-import 'swiper/css';
-import { SwiperSlide,Swiper } from 'swiper/react';
-import './style.css'
+import ItemBook from "../Cart/ItemBook";
+import bookItem from "./../../data/BookItem";
+
+import "./style.css";
+
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+
+// import required modules
+import { Grid, Pagination } from "swiper";
+
+import imgTitle from "./../../img/imgCart/BannerBlock09_ThieuNhi_350x415.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 const ListItemBook = () => {
   return (
-    <div className='  ' id="listBook">
+    <div className=" flex " id="listBook">
+      <div>
+        <img src={imgTitle} />
+      </div>
       <Swiper
-         width={1230}
-        slidesPerView={4}
-        navigation
-        pagination={{ clickable: true }}>
-      {bookItem.map(dt=>(
+        slidesPerView={2}
+        grid={{
+          rows: 2,
+          fill: "row",
+        }}
+        spaceBetween={20}
+        modules={[Grid, Pagination]}
+        className="mySwiper"
+      >
+        {bookItem.map((dt) => (
           <SwiperSlide>
-             <ItemBook {...dt}/>
+            <ItemBook {...dt} />
           </SwiperSlide>
         ))}
       </Swiper>
-       
-      
     </div>
-  )
-}
+  );
+};
 
-export default ListItemBook
+export default ListItemBook;

@@ -4,7 +4,7 @@ import Tab from '@mui/material/Tab';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import ImgCart from './../../img/imgCart/image_195509_1_29993.jpg'
 import ListItemBook from '../List/ListItemBook';
-
+import bookItem from './../../data/BookItem'
 
 
 export default function LabTabs() {
