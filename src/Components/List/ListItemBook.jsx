@@ -15,7 +15,7 @@ import { Grid, Pagination } from "swiper";
 import imgTitle from "./../../img/imgCart/BannerBlock09_ThieuNhi_350x415.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const ListItemBook = () => {
+const ListItemBook = (item) => {
   return (
     <div className=" flex " id="listBook">
       <div>
