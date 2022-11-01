@@ -1,45 +1,135 @@
 import ImgCart from './../img/imgCart/image_195509_1_29993.jpg'
 
-const bookItem = [{
+const bookItem = [
+      {
     nameList: "VĂN HỌC",
-    listItem: [{
+    listItem: [
+        {
+        id:"1",
         nameListItem: "Tiểu Thuyết",
-        item: [{
+        item: [{ id:1,
                 img: ImgCart,
                 name: "Cambridge Ielts 15 Academic With Answers (Savina)",
                 price: "167.000 đ",
                 discount: "-30%",
                 old_price: "239.000 đ",
+                tag: "1"
             },
-            {
+            {  id:2,
                 img: ImgCart,
                 name: "Cambridge Ielts 15 Academic With Answers (Savina)",
                 price: "167.000 đ",
                 discount: "-30%",
                 old_price: "239.000 đ",
+                tag: "1"
             },
-            {
+            { id:3,
                 img: ImgCart,
                 name: "Cambridge Ielts 15 Academic With Answers (Savina)",
                 price: "167.000 đ",
                 discount: "-30%",
                 old_price: "239.000 đ",
+                tag: "1"
             },
-            {
+            { id:4,
                 img: ImgCart,
                 name: "Cambridge Ielts 15 Academic With Answers (Savina)",
                 price: "167.000 đ",
                 discount: "-30%",
                 old_price: "239.000 đ",
+                tag: "1"
             },
-            {
+            {   id:5,
                 img: ImgCart,
                 name: "Cambridge Ielts 15 Academic With Answers (Savina)",
                 price: "167.000 đ",
                 discount: "-30%",
                 old_price: "239.000 đ",
+                tag: "1"
+            },
+            {  id:2,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "1"
+            },
+            { id:3,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "1"
+            },
+            { id:4,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "1"
+            },
+            {   id:5,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "1"
             },
         ],
-    }, ],
-}, ];
+    }, 
+    {
+        id:"2",
+        nameListItem: "NGon Tinh",
+        item: [{ id:1,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "2"
+            },
+            {  id:2,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "2"
+            },
+            { id:3,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "2"
+            },
+            { id:4,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "2"
+            },
+            {   id:5,
+                img: ImgCart,
+                name: "Cambridge Ielts 15 Academic With Answers (Savina)",
+                price: "167.000 đ",
+                discount: "-30%",
+                old_price: "239.000 đ",
+                tag: "2"
+            },
+        ],
+    }, 
+
+
+],
+}, 
+ 
+];
 export default bookItem;

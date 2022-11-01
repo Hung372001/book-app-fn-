@@ -1,11 +1,10 @@
- .swiper {
-     width: 100%;
- }
- 
+
  .swiper-grid-column>.swiper-wrapper {
      flex-direction: unset !important;
  }
- 
+ .swiper {
+    width: 100%;
+}
  .swiper-slide {
      text-align: center;
      font-size: 18px;
@@ -25,3 +24,4 @@
      -webkit-align-items: center;
      align-items: center;
  }
+

@@ -1,12 +1,22 @@
 import React from 'react'
 import Slider from '../Components/Slider/Slider'
-import ColorTabs from '../Components/Tabs/Tabs'
-
+import LabTabs from '../Components/Tabs/Tabs'
+import bookItem from './../data/BookItem'
 const Home = () => {
+ 
+  console.log(...bookItem)
   return (
     <div className="bg-[#f0f0f0]">
         <Slider/>
-        <ColorTabs/>
+       
+{bookItem.map(dt=>
+  
+  (
+    <LabTabs {...dt}/>
+  ))}
+    
+       
+       
     </div>
   )
 }

@@ -18,18 +18,14 @@ const Slider = () => {
     sliderRef.current.swiper.slideNext();
   }, []);
   return (
-    <div className='max-w-[1230px] mx-auto '>
+    <div className='  md:max-w-[1230px] w-full max-w-full md:mx-auto '>
        <div className="flex xl:flex-row lg:flex-col ">
         <div className='relative' id="banner">
 
-      
        <Swiper
-       width={830}
+      
        ref={sliderRef}
       slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-
     >
       {dataSlider.map(dt=>(
        <SwiperSlide><img  src={dt.src} alt="" className=" max-w-full w-full h-auto md:h-[316px] rounded-lg" /></SwiperSlide>
