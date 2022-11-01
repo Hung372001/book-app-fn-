@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import ItemBook from "../Cart/ItemBook";
-import bookItem from "./../../data/BookItem";
 
 import "./style.css";
 
@@ -41,7 +40,7 @@ const ListItemBook = (item) => {
 console.log(checkstart)
 
   return (
-    <div className=" flex " id="listBook">
+    <div className=" flex relative " id="listBook">
       <div className="hidden md:block">
         <img src={imgTitle} />
       </div>
@@ -103,16 +102,18 @@ console.log(checkstart)
           ))
          
 ))}
-<div className={`w-9 h-9 rounded-full flex items-center justify-center  border-[1px] border-black cursor-pointer absolute top-[45%] z-50 left-3 ${checkstart?"hidden":""}`
+<div className={`w-9 h-9 rounded-full flex items-center justify-center  border-[1px] border-black cursor-pointer absolute top-[45%] z-50 left-0 ${checkstart?"hidden":""}`
 
            } onClick={handlePrev}>
 <ion-icon name="chevron-back-outline"></ion-icon>
 </div>
 
-<div className={`w-9 h-9 rounded-full  flex items-center justify-center border-[1px] border-black cursor-pointer absolute top-[45%] z-50 right-3  ${checkEnd?"hidden":""}`} onClick={handleNext}>
+<div className={`w-9 h-9 rounded-full  flex items-center justify-center border-[1px] border-black cursor-pointer absolute top-[45%] z-50 right-0  ${checkEnd?"hidden":""}`} onClick={handleNext}>
 <ion-icon name="chevron-forward-outline"></ion-icon>
 </div>
+
       </Swiper>
+
     </div>
   );
 };

@@ -1,12 +1,1 @@
 
- #banner .swiper {
-        width: 830px;
-    }
-@media (min-width:768x) {
-   
-    #banner .swiper {
-        max-width: 100%;
-        height: auto;
-        width: 100%;
-    }
-}

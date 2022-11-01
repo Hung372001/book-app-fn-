@@ -18,41 +18,88 @@ const Slider = () => {
     sliderRef.current.swiper.slideNext();
   }, []);
   return (
-    <div className='  md:max-w-[1230px] w-full max-w-full md:mx-auto '>
-       <div className="flex xl:flex-row lg:flex-col ">
-        <div className='relative' id="banner">
+    // <div className='  md:max-w-[1230px] w-full max-w-full md:mx-auto '>
+    //    <div className="flex xl:flex-row lg:flex-col ">
+    //     <div className='relative' id="banner">
 
-       <Swiper
+    //    <Swiper
       
-       ref={sliderRef}
-      slidesPerView={1}
-    >
-      {dataSlider.map(dt=>(
-       <SwiperSlide><img  src={dt.src} alt="" className=" max-w-full w-full h-auto md:h-[316px] rounded-lg" /></SwiperSlide>
-      ))}
-     </Swiper>
-     <div className='flex items-center justify-center w-[24px]  h-[24px] rounded-full bg-white  hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 left-[-12px]'  onClick={handlePrev}>
-    <ion-icon name="chevron-back-outline"></ion-icon>
+    //    ref={sliderRef}
+    //   slidesPerView={1}
+    // >
+    //   {dataSlider.map(dt=>(
+    //    <SwiperSlide><img  src={dt.src} alt="" className=" max-w-full w-full h-auto md:h-[316px] rounded-lg" /></SwiperSlide>
+    //   ))}
+    //  </Swiper>
+    //  <div className='flex items-center justify-center w-[24px]  h-[24px] rounded-full bg-white  hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 left-[-12px]'  onClick={handlePrev}>
+    // <ion-icon name="chevron-back-outline"></ion-icon>
+    <div className="max-w-[1230px] mx-auto ">
+      <div className="flex xl:flex-row lg:flex-col ">
+        <div className="relative  max-w-[830px] w-full" id="banner">
+          <Swiper
+            ref={sliderRef}
+            slidesPerView={1}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 1,
+                grid: {
+                  rows: 2,
+                },
+              },
+              768: {
+                slidesPerView: 1,
+              },
+              1024: {
+                slidesPerView: 1,
+              },
+            }}
+            navigation
+           
+          >
+            {dataSlider.map((dt) => (
+              <SwiperSlide>
+                <img
+                  src={dt.src}
+                  alt=""
+                  className=" max-w-full w-full h-auto md:h-[316px] rounded-lg"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div
+            className="flex items-center justify-center w-[24px]  h-[24px] rounded-full bg-white  hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 left-[-12px]"
+            onClick={handlePrev}
+          >
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </div>
+          <div
+            className="flex items-center justify-center w-[24px] h-[24px] rounded-full  bg-white hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 right-[-12px]"
+            onClick={handleNext}
+          >
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </div>
+        <div className=" hidden xl:flex flex-col  ml-2 ">
+          <div className="h-full mb-1">
+            <img src={img1} alt="" className="h-[156px] rounded-lg" />
+          </div>
+          <div className="h-full">
+            <img src={img1} alt="" className="h-[156px] rounded-lg" />
+          </div>
+        </div>
+        <div className=" hidden  xl:hidden lg:flex flex-row mt-10 ">
+          {dataImgTablet.map((dt) => (
+            <div className="h-full mb-1 mr-[10px] ">
+              <img src={dt.src} alt="" className="h-[156px] w-[272px]" />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-     <div className='flex items-center justify-center w-[24px] h-[24px] rounded-full  bg-white hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 right-[-12px]' onClick={handleNext}>
-     <ion-icon name="chevron-forward-outline"></ion-icon>
-     </div>
-     </div >
-       <div className=' hidden xl:flex flex-col  ml-2 '>
-        <div className="h-full mb-1"><img src={img1}  alt="" className="h-[156px] rounded-lg"/></div>
-         <div className="h-full"><img src={img1} alt="" className="h-[156px] rounded-lg"/></div>
-       </div>
-       <div className=' hidden  xl:hidden lg:flex flex-row mt-10 '>
-       {dataImgTablet.map(dt=>(
-        <div className="h-full mb-1 mr-[10px] "><img src={dt.src}  alt="" className="h-[156px] w-[272px]"/></div>
-
-       ))}
-        
-       </div>
-    </div>
-    
-    </div>
-  )
+  );
 }
 
 export default Slider

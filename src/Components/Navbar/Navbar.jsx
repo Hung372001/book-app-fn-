@@ -47,7 +47,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         className={`
-        md:hidden bg-white  absolute w-full h-full bottom-0 pb-24 pl-4
+        md:hidden bg-white  absolute w-full h-full bottom-0 z-50 pb-24 pl-4
 duration-500 ${open ? "left-0" : "left-[-100%]"}
         `}
                     >
