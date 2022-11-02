@@ -5,7 +5,7 @@ import Home from './Pages/Home';
 import Footer from './Components/Footer';
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-[#f0f0f0]">
     <Navbar/>
     <Home/>
     <Footer/>

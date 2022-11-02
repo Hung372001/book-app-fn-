@@ -7,7 +7,8 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     console.log(open);
     return (
-        <div class=" max-w-[1230px] mx-auto bg-white">
+        <div className='w-full  bg-white'>
+<div class=" max-w-[1230px] mx-auto bg-white">
             <div className=' hidden md:flex items-center w-full mr-0 relative flex-row justify-between'>
                 <div className=' flex '>
                     <h1>Logo</h1>
@@ -68,6 +69,8 @@ duration-500 ${open ? "left-0" : "left-[-100%]"}
                 </div>
             </div>
         </div>
+        </div>
+        
 
     )
 }

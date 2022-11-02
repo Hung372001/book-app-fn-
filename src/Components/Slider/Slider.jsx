@@ -33,7 +33,7 @@ const Slider = () => {
     //  </Swiper>
     //  <div className='flex items-center justify-center w-[24px]  h-[24px] rounded-full bg-white  hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 left-[-12px]'  onClick={handlePrev}>
     // <ion-icon name="chevron-back-outline"></ion-icon>
-    <div className="max-w-[1230px] mx-auto ">
+    <div className="max-w-[1230px] mx-auto  mt-4">
       <div className="flex xl:flex-row lg:flex-col ">
         <div className="relative  max-w-[830px] w-full" id="banner">
           <Swiper
@@ -90,14 +90,15 @@ const Slider = () => {
             <img src={img1} alt="" className="h-[156px] rounded-lg" />
           </div>
         </div>
-        <div className=" hidden  xl:hidden lg:flex flex-row mt-10 ">
+    
+      </div>
+      <div className=" hidden  xl:flex flex-row mt-4  justify-between">
           {dataImgTablet.map((dt) => (
             <div className="h-full mb-1 mr-[10px] ">
-              <img src={dt.src} alt="" className="h-[156px] w-[272px]" />
+              <img src={dt.src} alt="" className="h-[156px] w-[300px] max-w-[300px] rounded-lg" />
             </div>
           ))}
         </div>
-      </div>
     </div>
   );
 }
