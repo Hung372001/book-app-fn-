@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link as Links } from 'react-router-dom'
 import Account from './Account'
 import Cart from './Cart'
 import NavLinks from './NavLink'
@@ -11,7 +12,13 @@ const Navbar = () => {
 <div class=" max-w-[1230px] mx-auto bg-white">
             <div className=' hidden md:flex items-center w-full mr-0 relative flex-row justify-between'>
                 <div className=' flex '>
-                    <h1>Logo</h1>
+                    <h1>
+                        <Links to="/">
+                        Logo
+                        </Links>
+                     
+                        
+                        </h1>
 
                 </div>
                 <div className='ml-[24px] w-24'>

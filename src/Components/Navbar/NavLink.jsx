@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { link } from "./MyLinks";
 const NavLinks = () => {
   const [heading, setHeading] = useState("");
@@ -44,7 +45,7 @@ const NavLinks = () => {
                         </h1>
                         {mysublink.sublink.map((slinl, k) => (
                           <li key={k} className="text-sm text-gray-600 my-2.5 ">
-                            <a className="hover:text-blue-400">{slinl.name}</a>
+                            <Link to={`/DanhSach/${mysublink.Head}/${slinl.name}`} className="hover:text-blue-400">{slinl.name}</Link>
                           </li>
                         ))}
                       </div>
