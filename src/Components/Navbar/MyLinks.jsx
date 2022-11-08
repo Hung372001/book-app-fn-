@@ -4,6 +4,7 @@ export const link = [
       submenu: true,
       sublinks: [
         {
+          category:"Sách Tiếng Việt",
           Head: "Văn Học",
           sublink: [
             {
@@ -21,6 +22,7 @@ export const link = [
           ],
         },
         {
+          category:"Sách Quốc Tế",
           Head: "Thiếu Nhi",
           sublink: [
             {

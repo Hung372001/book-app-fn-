@@ -9,8 +9,10 @@ const Routes = () => {
        
       <Route path="/" exact component={Home} />
       <Route path="/Home" exact component={Home} />
-      <Route path="/DanhSach/:category/:category" exact component={DanhSach} />
-      <Route path="/DanhSach/" exact component={DanhSach} />
+      <Route path="/:list/:category/:category1/:category2/" exact component={DanhSach} />
+      <Route path="/:list/:category/:category1" exact component={DanhSach} />
+      <Route path="/:list/:category" exact component={DanhSach} />
+      <Route path="/:list/" exact component={DanhSach} />
     </Switch>
   )
 }

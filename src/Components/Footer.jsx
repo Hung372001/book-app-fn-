@@ -8,7 +8,7 @@ const Footer = () => {
                     <div className="flex items-center text-2xl">
                         <ion-icon name="mail-outline"></ion-icon>
                     </div>
-                    <h2 className='text-2xl uppercase ml-4'> Đăng Ký Để Nhận ƯU Đãi</h2>
+                    <h2 className='text-2xl uppercase ml-4 mb-0 text-white'> Đăng Ký Để Nhận ƯU Đãi</h2>
                 </div>
                 <form className="bg-white p-2 rounded-lg flex items-center">
                     <div className='bg-none h-[inherit] leading-[inherit] w-[600px] float-right '>
