@@ -3,16 +3,43 @@ import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import BreadCrumb from "../Components/BreadCurmb/BreadCrumb";
 import ListBook from "./../data/ListNavBook";
+import ListBook2 from "../Components/ListBook/ListBook";
 import Gia from "./../data/Gia";
 import NXP from "./../data/NXP";
+import ListItemBook from "../Components/List/ListItemBook";
+import bookItem from "../data/BookItem";
+import Pagination from "../Components/Pagination/Pagination";
 const DanhSach = () => {
   const ref = useRef(null);
   const params = new URLSearchParams(window.location.pathname);
-  let { list, category, category1, category2 } = useParams();
+  let { category, category1, category2 } = useParams();
+  console.log(window.location.pathname)
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [checked, setChecked] = useState([]);
+  const [listbook,setListBook]=useState([])
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(12);
+  let a;
+  bookItem.map(item=>{
+    
+    item.listItem.map(data=>{
+       
+    a=data.item;
+
+    })
+})
+useEffect(() => {
+
+  setListBook(a)
+},[0] );
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = listbook.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
   const handleCheck = (id) => {
     setChecked((pre) => {
       const isChecked = checked.includes(id);
@@ -23,7 +50,7 @@ const DanhSach = () => {
       }
     });
   };
-  console.log(checked);
+  console.log();
   useLayoutEffect(() => {
     setHeight(ref.current.clientHeight);
     setWidth(ref.current.clientWidth);
@@ -33,11 +60,11 @@ const DanhSach = () => {
       <div>
         <BreadCrumb />
       </div>
-
-      <div className="bg-white w-100% py-5 px-[10px]">
+<div className="flex justify-between gap-4">
+<div className="bg-white w-3/12 py-5 px-[10px]">
         <div>
           <ul ref={ref}>
-            {list == "DanhSach" ? (
+            {window.location.pathname.includes( "DanhSach") ? (
               <li>
                 Tất cả Sản Phẩm
                 {ListBook.map((item, index) => {
@@ -45,7 +72,7 @@ const DanhSach = () => {
                     return (
                       <li>
                         <Link
-                          to={`/${list}/${category}`}
+                          to={`/DanhSach/${category}`}
                           className={`${
                             category1 == item.name
                               ? "text-[#F7941E]  font-bold text-[14px]"
@@ -59,7 +86,7 @@ const DanhSach = () => {
                           {item.list.map((dt, index) => (
                             <li>
                               <Link
-                                to={`/${list}/${category}/${dt.name}`}
+                                to={`/DanhSach/${category}/${dt.name}`}
                                 className={`${
                                   category1 == dt.name
                                     ? "text-[#F7941E]  font-bold text-[14px]"
@@ -74,7 +101,7 @@ const DanhSach = () => {
                                     {dt.list.map((data) => (
                                       <li>
                                         <Link
-                                          to={`/${list}/${category}/${dt.name}/${data.name}`}
+                                          to={`/DanhSach/${category}/${dt.name}/${data.name}`}
                                           className={`${
                                             category2 == data.name
                                               ? "text-[#F7941E]  font-bold text-[14px]"
@@ -99,7 +126,7 @@ const DanhSach = () => {
                     return (
                       <li>
                         <Link
-                          to={`/${list}/${item.cate}`}
+                          to={`/DanhSach/${item.cate}`}
                           className={`${
                             item.cate == item.name
                               ? "text-[#F7941E]  font-bold text-[14px]"
@@ -154,7 +181,16 @@ const DanhSach = () => {
           
         </div>
       </div>
-      <div></div>
+      <div className="w-9/12">
+      <ListBook2 data={currentPosts}/>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={listbook.length}
+        paginate={paginate}
+      />
+      </div>
+</div>
+     
     </div>
   );
 };

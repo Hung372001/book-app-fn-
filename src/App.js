@@ -8,6 +8,7 @@ import Routes from './routes/Router';
 import 'antd/dist/antd.css'; 
 import DanhSach from './Pages/DanhSach';
 import BookItem from './Components/BookItem/BookItem';
+import ListBook from './Components/ListBook/ListBook';
 function App() {
   return (
     <div className="App bg-[#f0f0f0]">
@@ -18,8 +19,8 @@ function App() {
           <Navbar  />
           <div className="">
             <div className="main">
-              {/* <Routes /> */}
-              <BookItem/>
+              <Routes />
+             
             </div>{" "}
           </div>{" "}
           <Footer />
