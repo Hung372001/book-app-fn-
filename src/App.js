@@ -1,37 +1,44 @@
-import logo from './logo.svg';
-import './Components/List/style.css';
-import Navbar from './Components/Navbar/Navbar';
-import Home from './Pages/Home';
-import Footer from './Components/Footer';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Routes from './routes/Router';
-import 'antd/dist/antd.css'; 
-import DanhSach from './Pages/DanhSach';
-import BookItem from './Components/BookItem/BookItem';
-import ListBook from './Components/ListBook/ListBook';
+import "./Components/List/style.css";
+import { BrowserRouter, Route, RouterProvider } from "react-router-dom";
+import "antd/dist/antd.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import authService from "./auth/auth.service";
+import { useState, useEffect } from "react";
+import Router from "./routes/Router";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer";
+import { Provider } from "react";
+import store from "./store/store";
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: "#C92127",
+      light: "#C92127",
+    },
+    secondary: {
+      main: "#11cb5f",
+    },
+  },
+});
+
 function App() {
   return (
     <div className="App bg-[#f0f0f0]">
-    
-    <BrowserRouter>
-    <Route  children={<DanhSach/>}>
-    <div>
-          <Navbar  />
-          <div className="">
-            <div className="main">
-              <Routes />
-             
-            </div>{" "}
-          </div>{" "}
-          <Footer />
-        </div>
-    </Route>
-    
-        
-  
-  
-  </BrowserRouter>
-  </div>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Route
+            render={() => (
+              <div>
+                <Navbar />
+                <Router />
+                <Footer />
+              </div>
+            )}
+          />{" "}
+        </ThemeProvider>{" "}
+      </BrowserRouter>{" "}
+    </div>
   );
 }
 

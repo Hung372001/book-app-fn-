@@ -1,3 +1,7 @@
-#Account:hover #menu{
+#Account:hover #menu {
     display: flex;
+}
+
+.search:hover .goiy {
+    display: block;
 }

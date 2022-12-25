@@ -1,10 +1,10 @@
-import React, { useCallback, useRef } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {dataSlider,dataImgTablet} from './../../data/Slider'
-import img1 from './../../img/megasale_t10_flashsale_392x156.jpg'
-import img3 from './../../img/Slider/mangaweek_840x320.jpg'
-import 'swiper/css';
-import './style.css';
+import React, { useCallback, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { dataSlider, dataImgTablet } from "./../../data/Slider";
+import img1 from "./../../img/megasale_t10_flashsale_392x156.jpg";
+import img3 from "./../../img/Slider/mangaweek_840x320.jpg";
+import "swiper/css";
+import "./style.css";
 const Slider = () => {
   const sliderRef = useRef(null);
 
@@ -18,21 +18,6 @@ const Slider = () => {
     sliderRef.current.swiper.slideNext();
   }, []);
   return (
-    // <div className='  md:max-w-[1230px] w-full max-w-full md:mx-auto '>
-    //    <div className="flex xl:flex-row lg:flex-col ">
-    //     <div className='relative' id="banner">
-
-    //    <Swiper
-      
-    //    ref={sliderRef}
-    //   slidesPerView={1}
-    // >
-    //   {dataSlider.map(dt=>(
-    //    <SwiperSlide><img  src={dt.src} alt="" className=" max-w-full w-full h-auto md:h-[316px] rounded-lg" /></SwiperSlide>
-    //   ))}
-    //  </Swiper>
-    //  <div className='flex items-center justify-center w-[24px]  h-[24px] rounded-full bg-white  hover:w-10  hover:h-10 ease-in duration-300 p-[5px] absolute top-1/2 z-10 left-[-12px]'  onClick={handlePrev}>
-    // <ion-icon name="chevron-back-outline"></ion-icon>
     <div className="max-w-[1230px] mx-auto  mt-4">
       <div className="flex xl:flex-row lg:flex-col ">
         <div className="relative  max-w-[830px] w-full" id="banner">
@@ -57,7 +42,6 @@ const Slider = () => {
               },
             }}
             navigation
-           
           >
             {dataSlider.map((dt) => (
               <SwiperSlide>
@@ -90,17 +74,20 @@ const Slider = () => {
             <img src={img1} alt="" className="h-[156px] rounded-lg" />
           </div>
         </div>
-    
       </div>
       <div className=" hidden  xl:flex flex-row mt-4  justify-between">
-          {dataImgTablet.map((dt) => (
-            <div className="h-full mb-1 mr-[10px] ">
-              <img src={dt.src} alt="" className="h-[156px] w-[300px] max-w-[300px] rounded-lg" />
-            </div>
-          ))}
-        </div>
+        {dataImgTablet.map((dt) => (
+          <div className="h-full mb-1 mr-[10px] ">
+            <img
+              src={dt.src}
+              alt=""
+              className="h-[156px] w-[300px] max-w-[300px] rounded-lg"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Slider
+export default Slider;
