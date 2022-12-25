@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "../Components/Slider/Slider";
 import LabTabs from "../Components/Tabs/Tabs";
 import bookItems from "./../data/BookItem";
+import Helmet from "../Components/Helmet/Helmet";
 const Home = () => {
   // import alias react
   const [file, setFile] = useState(null);
@@ -12,12 +13,14 @@ const Home = () => {
   const [listDis, setListDis] = useState([]);
 
   return (
-    <div className="bg-[#f0f0f0]">
-      <Slider />
-      {bookItems.map((dt) => (
-        <LabTabs {...dt} />
-      ))}
-    </div>
+    <Helmet title="Trang Chủ">
+      <div className="bg-[#f0f0f0]">
+        <Slider />
+        {bookItems.map((dt) => (
+          <LabTabs {...dt} />
+        ))}
+      </div>
+    </Helmet>
   );
 };
 
