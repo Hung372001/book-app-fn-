@@ -14,6 +14,7 @@ import {
 import { useSelector } from "react-redux";
 import AuthApi from "../api/auth.api";
 import Helmet from "../Components/Helmet/Helmet";
+import { Link, useHistory } from "react-router-dom";
 const Order = () => {
   const {
     register,
@@ -38,6 +39,7 @@ const Order = () => {
   const [value, setValue1] = React.useState("female");
   const order = useSelector((data) => data.user.product);
   const [products, setProduct] = useState({ order });
+  let history = useHistory();
   const prices = useSelector((data) => data.user.PriceChange);
   console.log(prices);
   const getProvince = () => {
@@ -117,8 +119,8 @@ const Order = () => {
   };
 
   const handGetOrder = async (data) => {
-    data = Object.assign(data, diaChi, order, price);
-    console.log(data);
+    data = Object.assign(data, diaChi, products, price);
+    history.push("/thanh-toan-hoan-tat/");
     const response = await AuthApi.createOrder(data)
       .then((res) => {
         console.log(res.data);
@@ -376,13 +378,15 @@ const Order = () => {
               </span>
             </div>
             <div className="flex justify-end w-full my-4">
-              <Button
-                variant="contained"
-                sx={{}}
-                onClick={handleSubmit(handGetOrder)}
-              >
-                Xác Thanh Toán
-              </Button>
+              <Link to="/thanh-toan-hoan-tat">
+                <Button
+                  variant="contained"
+                  sx={{}}
+                  onClick={handleSubmit(handGetOrder)}
+                >
+                  Xác Thanh Toán
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
