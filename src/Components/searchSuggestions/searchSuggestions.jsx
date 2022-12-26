@@ -8,7 +8,7 @@ const SearchSuggestions = (props) => {
   const [data, setData] = useState([]);
 
   const getDataHotSearch = async () => {
-    const response = await AuthApi.getbook()
+    const response = await AuthApi.getbookAll()
       .then((res) => {
         setData(res.data.book);
       })

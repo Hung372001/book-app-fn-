@@ -44,10 +44,11 @@ const Navbar = () => {
               type="text"
               name=""
               id=""
-              class="border-[1px] border-black  h-10 w-full rounded-lg  search"
+              class="border-[1px] border-black  h-10 w-full rounded-lg pl-4 search"
               onChange={(e) => setValueSearch(e.target.value)}
               onFocus={focusInput}
               onBlur={focusInput}
+              placeholder="Tìm kiếm sản phẩm bạn mong muốn"
             />
             <Link to={`/search/${valueSearch}`}>
               <button
@@ -90,7 +91,8 @@ const Navbar = () => {
             <div class="w-[calc(100%-104px)]">
               <input
                 type="text"
-                className="border-[1px] border-black w-full rounded-lg"
+                className="border-[1px] border-black w-full rounded-lg pl-4"
+                placeholder="Tìm kiếm sản phẩm bạn mong muôn"
               />
             </div>
             <div className="flex">

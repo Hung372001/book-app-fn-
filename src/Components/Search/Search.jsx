@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Helmet from "../Helmet/Helmet";
 const Search = () => {
   const [data, setData] = useState([]);
+  const [dataAll, setDataAll] = useState([]);
   const [bia, setBia] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoad, setIsLoad] = useState(false);
@@ -21,6 +22,15 @@ const Search = () => {
     setBiaValue(newValue);
   };
   const getData = async () => {
+    const responseAll = await AuthApi.searchBookAll(
+      dataBook,
+      stringSearch.search
+    )
+      .then((res) => {
+        setDataAll(res.data.findBookName);
+      })
+      .catch((error) => {});
+
     const response = await AuthApi.getNhaXuatBan()
       .then((res) => {
         setData(res.data.nhaXuatBan);
@@ -121,7 +131,7 @@ const Search = () => {
           <div className="bg-white flex justify-center py-[13px] px-[15px]">
             <Stack spacing={2}>
               <Pagination
-                count={Math.ceil(bookSearch.length / pageSize)}
+                count={Math.ceil(dataAll.length / pageSize)}
                 page={page}
                 sx={{
                   "& button:hover": {

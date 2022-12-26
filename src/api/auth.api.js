@@ -13,7 +13,9 @@ class AuthAPI extends HttpRequest {
     getbook(data, options) {
         return this.postRequest("/book/test", data, options)
     }
-
+    getbookAll(data, options) {
+        return this.getRequest("/book/", )
+    }
     search(stringSeacrh, page, data) {
         console.log(stringSeacrh)
         return this.postRequest(`book/search/${stringSeacrh}/page=${page}`, data)
@@ -27,7 +29,9 @@ class AuthAPI extends HttpRequest {
     createOrder(data, options) {
         return this.postRequest("/order-prant/", data, options)
     }
-
+    searchBookAll(data, stringSeacrh, options) {
+        return this.postRequest(`book/search/${stringSeacrh}`, data)
+    }
 
     getNXP(data, options) {
         return this.getRequest("/nha-xuat-ban", data, options)

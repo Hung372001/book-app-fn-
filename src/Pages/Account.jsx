@@ -7,6 +7,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import React from "react";
 import Profile from "../Components/Profile/Profile";
 import HistoryOrder from "../Components/HistoryOrder/HistoryOrder";
+import Logout from "../Components/Logout/Logout";
 
 const Account = () => {
   const [value, setValue] = React.useState("1");
@@ -42,7 +43,9 @@ const Account = () => {
           <TabPanel value="2">
             <HistoryOrder />{" "}
           </TabPanel>
-          <TabPanel value="3">Item Three</TabPanel>
+          <TabPanel value="3">
+            <Logout />
+          </TabPanel>
         </TabContext>
       </div>
     </div>
