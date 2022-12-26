@@ -10,7 +10,6 @@ import Helmet from "../Components/Helmet/Helmet";
 
 const DanhSach = () => {
   const ref = useRef(null);
-  const params = new URLSearchParams(window.location.pathname);
   let { category, category1, category2 } = useParams();
   const [value, setValue] = useState([0, 700000]);
   const [dataAll, setDataAll] = useState([]);

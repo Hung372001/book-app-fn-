@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NXP from "./../../data/NXP";
 import AuthApi from "../../api/auth.api";
 import { Pagination } from "@mui/material";
 import { Stack } from "@mui/system";

@@ -12,7 +12,7 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    trigger,
+
     setValue,
     formState: { errors },
   } = useForm({
@@ -21,7 +21,6 @@ const Register = () => {
   });
 
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState();
 
   const [open, setOpen] = useState(false);
 

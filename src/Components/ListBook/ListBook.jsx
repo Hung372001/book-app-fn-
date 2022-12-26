@@ -8,14 +8,13 @@ const ListBook2 = (props) => {
   return (
     <div class="grid grid-cols-4 gap-4 bg-white">
       {data.map((item, index) => (
-        <Link to={`/Sach/${item.id}`}>
-          <BookItem
-            gia={item.gia}
-            name={item.bookName.name}
-            img={item.bookName.bookImg}
-            isLoad={isLoad}
-          />
-        </Link>
+        <BookItem
+          id={item.id}
+          gia={item.gia}
+          name={item.bookName.name}
+          img={item.bookName.bookImg}
+          isLoad={isLoad}
+        />
       ))}
     </div>
   );

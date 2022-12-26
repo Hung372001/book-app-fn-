@@ -1,13 +1,11 @@
 import { Button, Checkbox } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+
 import DeleteIcon from "@mui/icons-material/Delete";
 import { DELETE_ITEM, addPrice } from "../redux/cartSystem";
 import NoItem from "../img/ico_emptycart.svg";
 import { Link } from "react-router-dom";
-import { removeItem } from "../utils/removeItem";
 import Helmet from "../Components/Helmet/Helmet";
 
 const Cart = () => {

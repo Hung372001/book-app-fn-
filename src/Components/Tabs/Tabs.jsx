@@ -8,13 +8,14 @@ import ListItemBook from "../List/ListItemBook";
 import { Typography } from "@mui/material";
 
 const LabTabs = (props) => {
-  const { nameList, listItem } = props;
-  const [value, setValue] = React.useState("1");
+  const { data } = props;
+  const [value, setValue] = React.useState(0);
   const [listTab, setlistTab] = React.useState([]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log(listItem);
+  console.log(data);
+
   return (
     <div className="max-w-[1230px] mx-auto bg-white rounded-lg mt-4">
       <Box sx={{ width: "100%", typography: "body1" }}>
@@ -26,7 +27,7 @@ const LabTabs = (props) => {
             paddingBottom: "5px",
           }}
         >
-          {nameList}
+          {data.name}
         </Typography>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -56,14 +57,14 @@ const LabTabs = (props) => {
               onChange={handleChange}
               aria-label="lab API tabs example"
             >
-              {listItem.map((dt) => (
-                <Tab label={dt.nameListItem} value={dt.id} />
+              {data.theLoai.map((dt, index) => (
+                <Tab key={index} label={dt.name} value={index} />
               ))}
             </TabList>
           </Box>
-          {listItem.map((dt) => (
-            <TabPanel value={dt.id}>
-              <ListItemBook item={dt.item} />
+          {data.theLoai.map((dt, index) => (
+            <TabPanel key={index} value={index} index={index}>
+              <ListItemBook item={dt.book} />
             </TabPanel>
           ))}
         </TabContext>

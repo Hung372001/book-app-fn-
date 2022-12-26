@@ -27,7 +27,7 @@ const NavLinks = () => {
           <h1
             className="py-7 flex justify-between items-center md:pr-0 pr-5"
             onClick={() => {
-              heading !== "Danh Mục" ? setHeading("Danh Mục") : setHeading("");
+              heading !== "Menu" ? setHeading("Menu") : setHeading("");
               setSubHeading("");
             }}
           >
@@ -77,42 +77,42 @@ const NavLinks = () => {
         </div>
         {/* Mobile-Menu */}
         <div className={`${heading === link.name ? "md:hidden" : "hidden"}`}>
-          {/* {link.sublinks.map((slink) => (
+          {data.map((slink) => (
+            <div>
               <div>
-                <div>
-                  <h1
-                    onClick={() =>
-                      subheading !== slink.Head
-                        ? setSubHeading(slink.Head)
-                        : setSubHeading("")
-                    }
-                    className="py-4 pl-7 font-semibold md:pr-0 flex justify-between items-center md:pr-0 "
-                  >
-                    {slink.Head}
-                    <span className="text-xl md:mt-1 md:ml-2 inline">
-                      <ion-icon
-                        name={`${
-                          subheading === slink.Head
-                            ? "chevron-up"
-                            : "chevron-down"
-                        }`}
-                      ></ion-icon>
-                    </span>
-                  </h1>
-                  <div
-                    className={`${
-                      subheading === slink.Head ? "md:hidden" : "hidden"
-                    }`}
-                  >
-                    {slink.sublink.map((slinks) => (
-                      <li className="pl-14 py-3">
-                        <a>{slinks.name}</a>
-                      </li>
-                    ))}
-                  </div>
+                <h1
+                  onClick={() =>
+                    subheading !== slink.name
+                      ? setSubHeading(slink.name)
+                      : setSubHeading("")
+                  }
+                  className="py-4 pl-7 font-semibold md:pr-0 flex justify-between items-center md:pr-0 "
+                >
+                  {slink.name}
+                  <span className="text-xl md:mt-1 md:ml-2 inline">
+                    <ion-icon
+                      name={`${
+                        subheading === slink.name
+                          ? "chevron-up"
+                          : "chevron-down"
+                      }`}
+                    ></ion-icon>
+                  </span>
+                </h1>
+                <div
+                  className={`${
+                    subheading === slink.name ? "md:hidden" : "hidden"
+                  }`}
+                >
+                  {/* {slink.sublink.map((slinks) => (
+                    <li className="pl-14 py-3">
+                      <a>{slinks.name}</a>
+                    </li>
+                  ))} */}
                 </div>
               </div>
-            ))} */}
+            </div>
+          ))}
         </div>
       </div>
     </>

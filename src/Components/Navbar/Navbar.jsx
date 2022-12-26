@@ -5,6 +5,7 @@ import Cart from "./Cart";
 import NavLinks from "./NavLink";
 import Notification from "./notification";
 import SearchSuggestions from "../searchSuggestions/searchSuggestions";
+import { Typography } from "@mui/material";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [check, setCheck] = useState(false);
@@ -20,7 +21,18 @@ const Navbar = () => {
         <div className=" hidden md:flex items-center w-full mr-0 relative flex-row justify-between">
           <div className=" flex ">
             <h1>
-              <Links to="/">Logo</Links>
+              <Links to="/">
+                {" "}
+                <Typography
+                  variant="h4"
+                  component="h2"
+                  sx={{
+                    color: "#C92127",
+                  }}
+                >
+                  Book 11
+                </Typography>
+              </Links>
             </h1>
           </div>
           <div className="ml-[24px] w-24">
@@ -58,7 +70,15 @@ const Navbar = () => {
         </div>
         <div className=" block md:hidden">
           <div className="max-w-full text-center">
-            <h1>Logo</h1>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{
+                color: "#C92127",
+              }}
+            >
+              Book 11
+            </Typography>
           </div>
           <div className="flex flex-row justify-between items-center">
             <div className="text-2xl">

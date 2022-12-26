@@ -32,6 +32,9 @@ class AuthAPI extends HttpRequest {
     getNXP(data, options) {
         return this.getRequest("/nha-xuat-ban", data, options)
     }
+    getLoaiSach(data, options) {
+        return this.getRequest("/loai-sach", data, options)
+    }
     getbookName(data, options) {
         return this.getRequest("/book-name", data, options)
     }
@@ -63,8 +66,14 @@ class AuthAPI extends HttpRequest {
     getNgonNguSach() {
         return this.getRequest(`/ngon-ngu-sach`)
     }
+    getOrder(email) {
+        console.log(email)
+        return this.getRequest(`/order-prant/email/${email}`)
+    }
 
-
+    getUserEmail(email) {
+        return this.getRequest(`/users/email/${email}`)
+    }
     getNhaXuatBan(data, options) {
         return this.getRequest(`/nha-xuat-ban`)
     }

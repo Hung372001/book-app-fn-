@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AuthAPI from "../api/auth.api";
-import { useNavigate } from "react-router-dom";
 import { Button, Dialog, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,7 +24,7 @@ const Login = () => {
     const response = await AuthAPI.login(data)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("user", JSON.stringify(res.data));
+        localStorage.setItem("user", JSON.stringify(res.data.data));
         // navigate("/");
       })
       .catch((error) => {
